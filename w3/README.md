@@ -85,3 +85,106 @@ Una base de datos por lo general manejan una o mas tablas, estas son identificad
 - DROP TABLE - elimina una tabla
 - CREATE INDEX - crea un index (key de busqueda)
 - DROP INDEX - elimina un index
+
+## SQL SELECT
+
+Retorna datos de la tabla Customers
+
+```
+SELECT CustomerName, City FROM Customers;
+```
+
+### Syntax
+
+```
+SELECT column1, column2, ...
+FROM table_name;
+```
+
+### SELECT ALL
+
+Retorna toda la tabla customers
+
+```
+SELECT * FROM Customers;
+```
+
+## SQL SELECT DISTINCT
+
+Solo retorna valores distintos.  
+Por ejemplo la siguiente consulta retorna todos los paises diferentes en la tabla customers
+
+```
+SELECT DISTINCT Country FROM Customers;
+```
+
+output: (No retorna paises repetidos)
+
+| Country   |
+| --------- |
+| Argentina |
+| Austria   |
+| Belgium   |
+| Brazil    |
+| Canada    |
+| Denmark   |
+
+Podemos convinarlo con la palabra clave COUNT para retornar la cantidad de paises en la tabla
+
+```
+SELECT COUNT(DISTINCT Country) FROM Customers;
+```
+
+> Nota: COUNT(DISTINCT column_name) no lo soporta la base de datos de Microsoft Access
+
+## SQL WHERE
+
+Se utiliza para filtrar registros.  
+Retorna solo registros que pasen una condicion espesifica.
+Ejemplo:
+
+```
+SELECT * FROM Customers WHERE Country='Mexico';
+```
+
+Syntax :
+
+```
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+
+> WHERE se convina tambien con UPDATE, DELETE, etc.
+
+### TEXTO Y NUMEROS CON WHERE
+
+Text:  
+SQL requiere que los textos se escriban rodeados por comillas simples (la mayoria de los systemas de db tambien soportan comillas dobles pero sera mejor seguir con comillas simples)
+
+```
+SELECT * FROM Customers WHERE Country='Chile';
+```
+
+Number:  
+SQL requiere que los numeros no lleven comillas de ningun tipo, como:
+
+```
+SELECT * FROM Customers WHERE CustomerID=1;
+```
+
+### OPERADORES CON WHERE
+
+Podemos utilizar los siguientes operadores para filtrar
+
+| Operador | Descripcion                                                | ENGLISH               |
+| -------- | ---------------------------------------------------------- | --------------------- |
+| =        | igual                                                      | egual                 |
+| >        | mayor que,                                                 | greater than          |
+| <        | menor que                                                  | less than             |
+| >=       | mayor o igual                                              | greater than or equal |
+| <=       | menor o igual                                              | less than or equal    |
+| <>       | desigual , en algunas verciones de SQL se escribe !=       | Not equal             |
+| BETWEEN  | entre sierto range                                         | between               |
+| LIKE     | busqueda por un patron de referencia                       | LIKE                  |
+| IN       | para espesificar multiples posibles valores de una columna | IN                    |
