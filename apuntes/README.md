@@ -96,10 +96,8 @@ SELECT CustomerName, City FROM Customers;
 
 ### Syntax
 
-```
-SELECT column1, column2, ...
-FROM table_name;
-```
+> SELECT column1, column2, ...  
+> FROM table_name;
 
 ### SELECT ALL
 
@@ -149,11 +147,9 @@ SELECT * FROM Customers WHERE Country='Mexico';
 
 Syntax :
 
-```
-SELECT column1, column2, ...
-FROM table_name
-WHERE condition;
-```
+> SELECT column1, column2, ...  
+> FROM table_name  
+> WHERE condition;
 
 > WHERE se convina tambien con UPDATE, DELETE, etc.
 
@@ -188,3 +184,43 @@ Podemos utilizar los siguientes operadores para filtrar
 | BETWEEN  | entre sierto range                                         | between               |
 | LIKE     | busqueda por un patron de referencia                       | LIKE                  |
 | IN       | para espesificar multiples posibles valores de una columna | IN                    |
+
+## SQL ORDER BY
+
+La palabra clave ORDER BY se utliza para ordenear los resultados en forma ascendente o descendente.  
+Por ejemplo:
+
+```
+SELECT * FROM Products ORDER BY price DESC;
+SELECT * FROM Products ORDER BY price ASC;
+```
+
+Syntax:
+
+> SELECT column1, column2, ...  
+> FROM table_name  
+> ORDER BY column1, column2, ... ASC|DESC;
+
+### ORDEN ALFABETICO
+
+Para valores de type String se ordenan de manera alfabética.
+
+```
+SELECT * FROM Products ORDER BY ProductName DESC;
+```
+
+### ORDEN POR MULTIPLES COLUMNAS
+
+El siguiente comando ordena por Paises y Nombre de usuario.  
+Esto significa que si el pais se repite entonces se considera el nombre de usuario como criterio de ordenamiento alfabético.
+
+```
+SELECT * FROM Products ORDER BY Country, ProductName DESC;
+```
+
+### ORDEN POR MULTIPLES COLUMNAS Y CON ASC Y DESC
+
+```
+SELECT * FROM Customers
+ORDER BY Country ASC, CustomerName DESC;
+```
