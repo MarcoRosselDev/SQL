@@ -19,7 +19,7 @@ Tabla Customers
 | 3          | Antonio MorenoTaqueia               | Antonio Moreno | Matadores 2312                | Mexico D.F | 05023      | Mexico  |
 | 4          | Around the Horn                     | Thomas Hardy   | 120 Hanover Sq.               | London     | Wa1 1DP    | UK      |
 
-```
+```sql
 DELETE FROM Customers
 WHERE CustomerName='Alfreds Futterkiste';
 ```
@@ -37,7 +37,7 @@ Tabla Customers output:
 Es posible eliminar todos los registros si eliminar la tabla, esto significa que la estructura, atributos y index quedan intactos.  
 El comando es el siguiente
 
-```
+```sql
 DELETE FROM Customers;
 ```
 
@@ -45,6 +45,6 @@ DELETE FROM Customers;
 
 para eliminar una tabla utilizamos la declaracion DROP TABLE
 
-```
+```sql
 DROP TABLE Customers;
 ```

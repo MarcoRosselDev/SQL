@@ -27,7 +27,7 @@ Ejempolo:
 | 2 | Ana trumilllo Emparedados y helados | Ana Trujillo | Avda. de la Constitución 2222 | Mexico D.F | 05021 | Mexico |
 | 3 | Antonio MorenoTaqueia | Antonio Moreno | Matadores 2312 | Mexico D.F | 05023 | Mexico |
 
-```
+```sql
 INSERT INTO Cutomers (CustomerName, ContactName, Address, City, PostalCode, Country)
 VALUES ('Around the Horn', 'Thomas Hardy', '120 Hanover Sq.', 'London', 'Wa1 1DP', 'UK')
 ```
@@ -44,7 +44,7 @@ No nesecitamos agregar el CustomerID, este se auto-incrementa automaticamente cu
 
 Este seria el comando sinplificado si contamos con todos los valores, el resultado seria el mismo de arriba
 
-```
+```sql
 INSERT INTO Cutomers
 VALUES ('Around the Horn', 'Thomas Hardy', '120 Hanover Sq.', 'London', 'Wa1 1DP', 'UK')
 ```
@@ -58,7 +58,7 @@ Ejemplo:
 | 2 | Ana trumilllo Emparedados y helados | Ana Trujillo | Avda. de la Constitución 2222 | Mexico D.F | 05021 | Mexico |
 | 3 | Antonio MorenoTaqueia | Antonio Moreno | Matadores 2312 | Mexico D.F | 05023 | Mexico |
 
-```
+```sql
 INSERT INTO Customers (CustomerName, City, Country)
 VALUES ('Cardinal', 'Stavanger', 'Norway');
 ```
@@ -79,7 +79,7 @@ La sintaxis es la misma pero multiplicamos los valores:
 
 Ejemplo:
 
-```
+```sql
 INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
 VALUES
 ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway'),
@@ -108,7 +108,7 @@ Sintaxis IS NOT NULL:
 
 Por ejempolo el siguiente comando retorna los registros que tengan NULL en la propiedad direccion:
 
-```
+```sql
 SELECT CustomerName, ContactName, Address
 FROM Customers
 WHERE Address IS NULL

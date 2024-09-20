@@ -5,7 +5,7 @@ Por ejemplo:
 
 Encuentra el total de registros en la tabla Products
 
-```
+```sql
 SELECT COUNT(*)
 FROM Products;
 ```
@@ -41,7 +41,7 @@ FROM Products;
 
 Agregando condiciones:
 
-```
+```sql
 SELECT COUNT(ProductID)
 FROM Products
 WHERE Price > 20
@@ -57,7 +57,7 @@ Number or Records: 1
 Ignoramos los duplicados con llave DISTINCT dentro de la funcion COUNT().  
 Los registros con el mismo valor seran contados como 1.
 
-```
+```sql
 SELECT COUNT(DISTINCT Price)
 FROM Products;
 ```
@@ -74,7 +74,7 @@ Por ejemplo:
 
 Nombra la columna "Number of records"
 
-```
+```sql
 SELECT COUNT(*) AS [Number of records], CategoryID
 FROM Products
 GROUP BY CategoryID;
@@ -100,7 +100,7 @@ fragmento de referencia de la tabla Products:
 
 consulta :
 
-```
+```sql
 SELECT COUNT(*) AS [Number of records], CategoryID
 FROM Products
 GROUP BY CategoryID;

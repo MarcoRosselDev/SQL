@@ -11,7 +11,7 @@ Sintaxis MIN:
 
 Ejemplo MIN:
 
-```
+```sql
 SELECT MIN(Price)
 FROM Products;
 ```
@@ -30,7 +30,7 @@ Sintaxis MAX
 
 Ejemplo MAX:
 
-```
+```sql
 SELECT MAX(Price)
 FROM Products;
 ```
@@ -47,7 +47,7 @@ Cuando utilizamos MIN o MAX, la columna retornada no tiene un nombre descriptivo
 Para darle un nombre descriptivo, usar la palabra clave AS:  
 Por ejemplo:
 
-```
+```sql
 SELECT MIN(Price) AS SmallestPrice
 FROM Products;
 ```
@@ -62,7 +62,7 @@ Number or Records: 1
 
 Utilizamos la clausula GROUP BY, para retornar el valor MIN o MAX de una categoria de producto en una table:
 
-```
+```sql
 SELECT MAX(Price) AS SmallestPrice, CategoryID
 FROM Products
 GROUP BY CategoryID

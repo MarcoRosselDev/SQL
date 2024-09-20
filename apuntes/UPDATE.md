@@ -16,7 +16,7 @@ Ejemplo:
 | 3 | Antonio MorenoTaqueia | Antonio Moreno | Matadores 2312 | Mexico D.F | 05023 | Mexico |
 | 4 | Around the Horn | Thomas Hardy | 120 Hanover Sq. | London | Wa1 1DP | UK |
 
-```
+```sql
 UPDATE Customers
 SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
 WHERE CustomerID = 1;
@@ -36,7 +36,7 @@ Output:
 En la condicion WHERE es donde determinamos cuantos registros seran actualizados.  
 Por ejemplo la siguiente declaracion actualizara los nombres de todos los registros que tengan la nacionalidad Mexicana:
 
-```
+```sql
 UPDATE Customers
 SET CustomerName='Juan'
 WHERE Country='Mexico';

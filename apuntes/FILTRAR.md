@@ -2,7 +2,7 @@
 
 Retorna datos de la tabla Customers
 
-```
+```sql
 SELECT CustomerName, City FROM Customers;
 ```
 
@@ -15,7 +15,7 @@ SELECT CustomerName, City FROM Customers;
 
 Retorna toda la tabla customers
 
-```
+```sql
 SELECT * FROM Customers;
 ```
 
@@ -24,7 +24,7 @@ SELECT * FROM Customers;
 Solo retorna valores distintos.  
 Por ejemplo la siguiente consulta retorna todos los paises diferentes en la tabla customers
 
-```
+```sql
 SELECT DISTINCT Country FROM Customers;
 ```
 
@@ -41,7 +41,7 @@ output: (No retorna paises repetidos)
 
 Podemos convinarlo con la palabra clave COUNT para retornar la cantidad de paises en la tabla
 
-```
+```sql
 SELECT COUNT(DISTINCT Country) FROM Customers;
 ```
 
@@ -53,7 +53,7 @@ Se utiliza para filtrar registros.
 Retorna solo registros que pasen una condicion espesifica.
 Ejemplo:
 
-```
+```sql
 SELECT * FROM Customers WHERE Country='Mexico';
 ```
 
@@ -70,14 +70,14 @@ Syntax :
 Text:  
 SQL requiere que los textos se escriban rodeados por comillas simples (la mayoria de los systemas de db tambien soportan comillas dobles pero sera mejor seguir con comillas simples)
 
-```
+```sql
 SELECT * FROM Customers WHERE Country='Chile';
 ```
 
 Number:  
 SQL requiere que los numeros no lleven comillas de ningun tipo, como:
 
-```
+```sql
 SELECT * FROM Customers WHERE CustomerID=1;
 ```
 
@@ -102,7 +102,7 @@ Podemos utilizar los siguientes operadores para filtrar
 La palabra clave ORDER BY se utliza para ordenear los resultados en forma ascendente o descendente.  
 Por ejemplo:
 
-```
+```sql
 SELECT * FROM Products ORDER BY price DESC;
 SELECT * FROM Products ORDER BY price ASC;
 ```
@@ -117,7 +117,7 @@ Syntax:
 
 Para valores de type String se ordenan de manera alfabética.
 
-```
+```sql
 SELECT * FROM Products ORDER BY ProductName DESC;
 ```
 
@@ -126,13 +126,13 @@ SELECT * FROM Products ORDER BY ProductName DESC;
 El siguiente comando ordena por Paises y Nombre de usuario.  
 Esto significa que si el pais se repite entonces se considera el nombre de usuario como criterio de ordenamiento alfabético.
 
-```
+```sql
 SELECT * FROM Products ORDER BY Country, ProductName DESC;
 ```
 
 ### ORDEN POR MULTIPLES COLUMNAS Y CON ASC Y DESC
 
-```
+```sql
 SELECT * FROM Customers
 ORDER BY Country ASC, CustomerName DESC;
 ```
@@ -144,7 +144,7 @@ El operador AND se utiliza para filtrar registros basados en más de una condici
 Por ejemplo:  
 Retornar todos los customers que sean de Spain y su customerName comience con la letra G:
 
-```
+```sql
 SELECT * FROM Customers WHERE Country='Spain' AND CustomerName LIKE 'G%';
 ```
 
@@ -161,7 +161,7 @@ OR retorna registros si cualquira de las condiciones son TRUE.
 
 ### CONBINANDO AND Y OR
 
-```
+```sql
 SELECT * FROM Customers
 WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
 ```
@@ -181,7 +181,7 @@ Syntaxis:
 
 Ejemplo: Retorna todos los registros donde la ciudad sea Berlin o CustomerName comince con la letra G o la nacionalidad sea Norway
 
-```
+```sql
 SELECT * FROM Customers
 WHERE City = 'Berlin' OR CustomerName LIKE 'G%' OR Country = 'Norway';
 ```
@@ -190,7 +190,7 @@ WHERE City = 'Berlin' OR CustomerName LIKE 'G%' OR Country = 'Norway';
 
 Se convina con otros operadores para filtrar por un resultado negativo al deseado, por ejempolo queremos los registros que no sean de españa:
 
-```
+```sql
 SELECT * FROM Customers
 WHERE NOT Country='Spain';
 ```
