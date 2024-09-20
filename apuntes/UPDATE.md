@@ -30,3 +30,14 @@ Output:
 | 2          | Ana trumilllo Emparedados y helados | Ana Trujillo   | Avda. de la Constitución 2222 | Mexico D.F | 05021      | Mexico  |
 | 3          | Antonio MorenoTaqueia               | Antonio Moreno | Matadores 2312                | Mexico D.F | 05023      | Mexico  |
 | 4          | Around the Horn                     | Thomas Hardy   | 120 Hanover Sq.               | London     | Wa1 1DP    | UK      |
+
+## UPDATE MULTIPLES REGISTROS
+
+En la condicion WHERE es donde determinamos cuantos registros seran actualizados.  
+Por ejemplo la siguiente declaracion actualizara los nombres de todos los registros que tengan la nacionalidad Mexicana:
+
+```
+UPDATE Customers
+SET CustomerName='Juan'
+WHERE Country='Mexico';
+```
