@@ -4,10 +4,24 @@ En mis palabras:
 Son conectores de tablas para extraer info de las dos tablas y agregarlas a una nueva tabla para ser retornada.  
 Los JOIN principales son:
 
-1. INNER JOIN
-2. LEFT JOIN
-3. RIGHT JOIN
-4. FULL OUTER JOIN
+1. INNER JOIN  
+   <picture>
+   <img alt='inner join image representation.' style='background-color: white;'  src='./join_imgs/img_inner_join.png'>
+   </picture>
+
+2. LEFT JOIN  
+   <picture>
+   <img alt='inner join image representation.' style='background-color: white;'  src='./join_imgs/img_left_join.png'>
+   </picture>
+
+3. RIGHT JOIN  
+   <picture>
+   <img alt='inner join image representation.' style='background-color: white;'  src='./join_imgs/img_right_join.png'>
+   </picture>
+4. FULL OUTER JOIN  
+   <picture>
+   <img alt='inner join image representation.' style='background-color: white;'  src='./join_imgs/img_full_outer_join.png'>
+   </picture>
 
 ## INNER JOIN
 
@@ -30,14 +44,27 @@ Para ejemplificar INNER JOIN utilizaremos dos tablas, estas son un fragmento de 
 | 10309   | 37         | 1996-09-19 |
 | 10310   | 77         | 1996-09-20 |
 
-La columna CutomerID es la columna en comund de las dos tablas, por lo que podemos aplicar JOIN en estas dos tablas.
+La columna CutomerID es la columna en comun de las dos tablas, por lo que podemos aplicar JOIN en estas dos tablas.
 
 ##
 
-<!-- ![texto alternativo de prueva](./join_imgs/img_inner_join.png)
- -->
+La idea es la siguiente  
 <picture>
-  <source media='(prefers-color-scheme: light)' srcset='./join_imgs/img_full_outer_join.png'>
-  <source media='(prefers-color-scheme: dark)' style='color:white; background-color: white;' srcset='./join_imgs/img_left_join.png'>
-  <img alt='inner join image representation.' src='./join_imgs/img_inner_join.png'>
+<img alt='inner join image representation.' style='background-color: white;'  src='./join_imgs/img_inner_join.png'>
 </picture>
+
+INNER JOIN retorna la informacion a escojer de los documentos que coinsidan en una columna en comun:
+
+```sql
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+```
+
+output:
+
+| OrderID | CustomerName                       | OrderDate  |
+| ------- | ---------------------------------- | ---------- |
+| 10308   | Ana Trujillo Emparedados y helados | 9/18/1996  |
+| 10365   | Antonio Moreno Taquería            | 11/27/1996 |
+| 10383   | Around the Horn                    | 12/16/1996 |
